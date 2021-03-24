@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link type="text/css" rel="stylesheet" href="/static/styles.css"/>
+    </head>
+    <body>
+        <a href="/"><button class="back">Back</button></a>
+        <p>
+          {% if data %}
+            Successfully added game!
+          {% endif %}
+        </p>
+        <form action="{{ url_for('gamein') }}" class="form" method="POST" autocomplete="off">
+            <p>
+                <label for="win1">Winning Player 1</label>
+                <input type="text" id="win1" name="win1">
+            </p>
+            <p>
+                <label for="win2">Winning Player 2</label>
+                <input type="text" id="win2" name="win2">
+            </p>
+            <p>
+                <label for="loss1">Losing Player 1</label>
+                <input type="text" id="loss1" name="loss1">
+            </p>
+            <p>
+                <label for="loss2">Losing Player 2</label>
+                <input type="text" id="loss2" name="loss2">
+            </p>
+            <p>
+                <label for="pass">Password</label>
+                <input type="text" inputmode="decimal" id="pass" name="pass" required>
+            </p>
+            <p>
+                <button type="submit" id="submit" name="submit" class="all">Submit</button>
+            </p>
+        </form>
+    </body>
+</html>

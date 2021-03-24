@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link type="text/css" rel="stylesheet" href="/static/styles.css"/>
+    </head>
+    <body>
+        <button onclick="history.go(-1)" class="back">Back</button>
+        <h2>{{name}}'s Stats</h2>
+        <h1>Player stats</h1>
+        <table>
+            <thread>
+                <tr>
+                    <th>Player</th>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                    <th>Win %</th>
+                </tr>
+            </thread>
+            <tbody>
+                {% for row in data1 %}
+                    
+                    <tr>
+                            <td>{{row[0]}}</td>
+                            <td>{{row[1]}}</td>
+                            <td>{{row[2]}}</td>
+                            <td>{{row[3]}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h1>Team stats</h1>
+        <table>
+            <thread>
+                <tr>
+                    <th>Player 1</th>
+                    <th>Player 2</th>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                    <th>Win %</th>
+                </tr>
+            </thread>
+            <tbody>
+                {% for row in data2 %}
+                    <tr>
+                            <td>{{row[0]}}</td>
+                            <td>{{row[1]}}</td>
+                            <td>{{row[2]}}</td>
+                            <td>{{row[3]}}</td>
+                            <td>{{row[4]}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h1>Games Played</h1>
+        <table>
+            <thread>
+                <tr>
+                    <th>Winner 1</th>
+                    <th>Winner 2</th>
+                    <th>Losser 1</th>
+                    <th>Losser 2</th>
+                    <th>Date Time</th>
+                </tr>
+            </thread>
+            <tbody>
+                {% for row in data3 %}
+                    <tr>
+                            <td>{{row[0]}}</td>
+                            <td>{{row[1]}}</td>
+                            <td>{{row[2]}}</td>
+                            <td>{{row[3]}}</td>
+                            <td>{{row[4]}}</td>
+                        </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>

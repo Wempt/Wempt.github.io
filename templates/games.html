@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link type="text/css" rel="stylesheet" href="/static/styles.css"/>
+    </head>
+
+    <button onclick="history.go(-1)" class="back">Back</button>
+<h2>Games</h2>
+<h1>Games Played: {{data1}}</h1>
+<table>
+    <thread>
+        <tr>
+            <th>Game #</th>
+            <th>Winner 1</th>
+            <th>Winner 2</th>
+            <th>Loser 1</th>
+            <th>Loser 2</th>
+            <th>Date Time</th>
+        </tr>
+    </thread>
+    <tbody>
+        {% for row in data %}
+            <tr>
+                <td>{{data1-loop.index0}}</td>
+                <td><a href=search/{{row[0]}} class="player">{{row[0]}}</a></td>
+                <td><a href=search/{{row[1]}} class="player">{{row[1]}}</a></td>
+                <td><a href=search/{{row[2]}} class="player">{{row[2]}}</a></td>
+                <td><a href=search/{{row[3]}} class="player">{{row[3]}}</a></td>
+                <td>{{row[4]}}</td>
+                </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</html>

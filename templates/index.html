@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link type="text/css" rel="stylesheet" href="/static/styles.css"/>
+    </head>
+    <body>
+        <h2>🎲Beer Die🎲</h2>
+        <p>
+            <a href=matchup><button class="all">team match up</button></a>
+        </p>
+        <p>
+            <a href=search><button class="all">search</button></a>
+            <a href=leaderboard><button class="all">leaderboard</button></a>
+        </p>
+        <p>
+            <a href=teams><button class="all">teams</button></a>
+            <a href=players><button class="all">players</button></a>
+            <a href=games><button class="all">games</button></a>
+        </p><p>
+            <a href=gamein><button class="admin">add game</button></a>
+            <a href=playerin><button class="admin">add player</button></a>
+        </p>
+        <h1>🔥Top Player🔥</h1>
+        <table>
+            <thread>
+                <tr>
+                    <th>Player</th>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                    <th>Win %</th>
+                </tr>
+            </thread>
+            <tbody>
+                {% for row in data1 %}
+                    
+                    <tr>
+                            <td><a href=search/{{row[0]}} class="player">{{row[0]}}</a></td>
+                            <td>{{row[1]}}</td>
+                            <td>{{row[2]}}</td>
+                            <td>{{row[3]}}%</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h1>🔥Top Team🔥</h1>
+        <table>
+            <thread>
+                <tr>
+                    <th>Player 1</th>
+                    <th>Player 2</th>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                    <th>Win %</th>
+                </tr>
+            </thread>
+            <tbody>
+                {% for row in data2 %}
+                    <tr>
+                            <td><a href=search/{{row[0]}} class="player">{{row[0]}}</a></td>
+                            <td><a href=search/{{row[1]}} class="player">{{row[1]}}</a></td>
+                            <td>{{row[2]}}</td>
+                            <td>{{row[3]}}</td>
+                            <td>{{row[4]}}%</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h1>Latest Game</h1>
+        <table>
+            <thread>
+                <tr>
+                    <th>Winner 1</th>
+                    <th>Winner 2</th>
+                    <th>Loser 1</th>
+                    <th>Loser 2</th>
+                    <th>Date Time</th>
+                </tr>
+            </thread>
+            <tbody>
+                {% for row in data3 %}
+                    <tr>
+                            <td><a href=search/{{row[0]}} class="player">{{row[0]}}</a></td>
+                            <td><a href=search/{{row[1]}} class="player">{{row[1]}}</a></td>
+                            <td><a href=search/{{row[2]}} class="player">{{row[2]}}</a></td>
+                            <td><a href=search/{{row[3]}} class="player">{{row[3]}}</a></td>
+                            <td>{{row[4]}}</td>
+                        </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h1>Games Played: {{data4}}</h1>
+        <h1>QR Code</h1>
+        <p> 
+          <a href=qr><img src="/static/beerdietracker.png" alt="qr code"></a>
+        </p>
+    </body>
+</html>

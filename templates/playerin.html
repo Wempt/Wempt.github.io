@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link type="text/css" rel="stylesheet" href="/static/styles.css"/>
+    </head>
+    <body>
+        <a href="/"><button class="back">Back</button></a>
+        <p>
+          {% if data %}
+            Added player {{data}}!
+          {% endif %}
+        </p>
+        <form action="{{ url_for('playerin') }}" class="form" method="POST" autocomplete="off">
+            <p>
+                <label for="player">Name of player to add</label>
+                <input type="text" id="player" name="player" required>
+            </p>
+            <p>
+                <label for="pass">Password</label>
+                <input type="text" inputmode="decimal" id="pass" name="pass" required>
+            </p>
+            <p>
+                <button type="submit" id="submit" name="submit" class="all">Submit</button>
+            </p>
+        </form>
+    </body>
+</html>
